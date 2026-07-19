@@ -1,0 +1,29 @@
+.cta-section{
+padding:110px 0;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.cta-box{
+text-align:center;
+color:white;
+}
+
+.cta-box h2{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.cta-box p{
+max-width:650px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}

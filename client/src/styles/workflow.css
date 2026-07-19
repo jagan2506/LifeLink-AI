@@ -1,0 +1,24 @@
+.workflow{
+padding:100px 0;
+background:#f8fafc;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:35px;
+margin-top:60px;
+}
+
+.step-card{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.step-icon{
+color:#dc2626;
+margin-bottom:20px;
+}

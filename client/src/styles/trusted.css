@@ -1,0 +1,33 @@
+.trusted{
+padding:80px 0;
+background:#ffffff;
+}
+
+.trusted-title{
+text-align:center;
+font-size:18px;
+font-weight:600;
+color:#64748b;
+margin-bottom:40px;
+}
+
+.trusted-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.trusted-card{
+padding:22px;
+text-align:center;
+background:#f8fafc;
+border-radius:14px;
+font-weight:600;
+transition:.3s;
+border:1px solid #e2e8f0;
+}
+
+.trusted-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
