@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.auth-container{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #0f766e
+    );
+
+}
+
+.glass-card{
+
+    width:400px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+
+    color:white;
+
+}
+
+.glass-card h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.glass-card p{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+input,
+select{
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+}
+
+select option{
+
+    color:black;
+
+}
+
+input::placeholder{
+
+    color:#ddd;
+
+}
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:#06b6d4;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    background:#0891b2;
+
+}
+
+.bottom-text{
+
+    margin-top:25px;
+
+}
+
+.bottom-text a{
+
+    margin-left:8px;
+
+    color:#38bdf8;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
