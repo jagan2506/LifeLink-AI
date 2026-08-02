@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import {
   collection,
   onSnapshot,
+  query,
+  orderBy,
   doc,
   updateDoc,
 } from "firebase/firestore";
@@ -13,17 +15,20 @@ function HospitalDashboard() {
   const [cases, setCases] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(
+    // Query emergencies with newest entries first
+    const q = query(
       collection(db, "emergencies"),
-      (snapshot) => {
-        const data = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setCases(data);
-      }
+      orderBy("createdAt", "desc")
     );
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setCases(data);
+    });
 
     return () => unsubscribe();
   }, []);
@@ -49,15 +54,12 @@ function HospitalDashboard() {
           <p>{item.description}</p>
 
           <p>
-            📍 {item.latitude?.toFixed(5)},
-            {item.longitude?.toFixed(5)}
+            📍 {item.latitude?.toFixed(5)}, {item.longitude?.toFixed(5)}
           </p>
 
           <h3>Status: {item.status}</h3>
 
-          <button
-            onClick={() => acceptEmergency(item.id)}
-          >
+          <button onClick={() => acceptEmergency(item.id)}>
             Accept Emergency
           </button>
 
