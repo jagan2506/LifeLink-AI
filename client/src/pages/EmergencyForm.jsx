@@ -34,17 +34,25 @@ function EmergencyForm() {
     const position = await getLocation();
 
     await addDoc(collection(db, "emergencies"), {
-      type: form.type,
-      severity: form.severity,
-      description: form.description,
+  type: form.type,
+  severity: form.severity,
+  description: form.description,
 
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
+  latitude: position.coords.latitude,
+  longitude: position.coords.longitude,
 
-      status: "Pending",
+  status: "Pending",
 
-      createdAt: serverTimestamp(),
-    });
+  createdAt: serverTimestamp(),
+});
+
+alert("Emergency Report Sent!");
+
+setForm({
+  type: "",
+  severity: "",
+  description: "",
+});
 
     alert("Emergency Report Sent!");
 
@@ -68,6 +76,7 @@ function EmergencyForm() {
           <select
             name="type"
             onChange={handleChange}
+            value={form.type}
             required
           >
             <option value="">Select</option>
@@ -83,6 +92,7 @@ function EmergencyForm() {
 
           <select
             name="severity"
+            value={form.severity}
             onChange={handleChange}
             required
           >
@@ -94,13 +104,13 @@ function EmergencyForm() {
           </select>
 
           <label>Description</label>
-
-          <textarea
-            rows="5"
-            name="description"
-            placeholder="Describe the emergency..."
-            onChange={handleChange}
-          />
+<textarea
+ rows="5"
+ name="description"
+ value={form.description}
+ placeholder="Describe the emergency..."
+ onChange={handleChange}
+/>
 
           <button className="submit-btn">
             <Send size={20} />
