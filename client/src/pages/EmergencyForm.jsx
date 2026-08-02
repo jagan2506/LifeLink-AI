@@ -73,35 +73,35 @@ setForm({
         <form onSubmit={submitEmergency}>
           <label>Emergency Type</label>
 
-          <select
-            name="type"
-            onChange={handleChange}
-            value={form.type}
-            required
-          >
-            <option value="">Select</option>
-            <option>Road Accident</option>
-            <option>Fire</option>
-            <option>Heart Attack</option>
-            <option>Stroke</option>
-            <option>Industrial Accident</option>
-            <option>Other</option>
-          </select>
+        <select
+  name="type"
+  onChange={handleChange}
+  value={form.type}
+  required
+>
+  <option value="">Select Emergency Type</option>
+  <option value="Road Accident">Road Accident</option>
+  <option value="Fire">Fire</option>
+  <option value="Heart Attack">Heart Attack</option>
+  <option value="Stroke">Stroke</option>
+  <option value="Industrial Accident">Industrial Accident</option>
+  <option value="Other">Other</option>
+</select>
 
           <label>Severity</label>
 
-          <select
-            name="severity"
-            value={form.severity}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-            <option>Critical</option>
-          </select>
+         <select
+  name="severity"
+  value={form.severity}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Severity</option>
+  <option value="Low">Low</option>
+  <option value="Medium">Medium</option>
+  <option value="High">High</option>
+  <option value="Critical">Critical</option>
+</select>
 
           <label>Description</label>
 <textarea
