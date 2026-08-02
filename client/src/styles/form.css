@@ -41,6 +41,7 @@ padding:14px;
 border:1px solid #d1d5db;
 border-radius:12px;
 font-size:16px;
+
 }
 
 .submit-btn{
@@ -61,4 +62,12 @@ transition:.3s;
 
 .submit-btn:hover{
 background:#b91c1c;
+}
+.emergency-card select {
+  color: #111827;
+  background:white;
+}
+
+.emergency-card select option {
+  color:#111827;
 }
