@@ -2,24 +2,32 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/auth.css";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Register() {
 
-  const handleLogin = (e) => {
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+
+  const handleRegister=(e)=>{
     e.preventDefault();
 
-    // Call Firebase login here
-  };
+    // Firebase Register
+  }
 
   return (
     <div className="auth-page">
+
       <div className="glass-card">
 
-        <h1>LifeLink AI</h1>
-        <p>Emergency Response System</p>
+        <h1>Create Account</h1>
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleRegister}>
+
+          <input
+            placeholder="Full Name"
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
+          />
 
           <input
             type="email"
@@ -35,22 +43,23 @@ function Login() {
             onChange={(e)=>setPassword(e.target.value)}
           />
 
-          <button type="submit">
-            Login
+          <button>
+            Register
           </button>
 
         </form>
 
         <p>
-          Don't have an account?
-          <Link to="/register">
-            Create Account
+          Already have an account?
+          <Link to="/">
+            Login
           </Link>
         </p>
 
       </div>
+
     </div>
   );
 }
 
-export default Login;
+export default Register;
