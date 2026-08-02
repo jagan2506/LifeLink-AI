@@ -15,7 +15,10 @@ function AppRoutes() {
       <Route path="/dashboard" element={<CitizenDashboard />} />
       <Route path="/emergency" element={<EmergencyForm />} />
       <Route path="/hospital" element={<HospitalDashboard />} />
-    <Route path="/login" element={<Login />} />
+    <Route 
+  path="/police" 
+  element={<div></div>} 
+/>
 
 <Route path="/register" element={<Register />} />
     </Routes>

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/auth.css";
+import { auth, db } from "../firebase/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 function Register() {
 
@@ -11,30 +14,33 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = async (e) => {
+ const handleRegister = async (e) => {
+  e.preventDefault();
+   if(password.length < 6){
+    alert("Password must be at least 6 characters");
+    return;
+  }
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-    e.preventDefault();
+    await setDoc(doc(db, "users", userCredential.user.uid), {
+      name,
+      email,
+      role,
+    });
 
-    try {
+    alert("Account Created Successfully");
 
-      // TODO: Firebase Register
+    navigate("/login");
 
-      console.log({
-        name,
-        role,
-        email,
-        password,
-      });
-
-      navigate("/login");
-
-    } catch (error) {
-
-      alert(error.message);
-
-    }
-
-  };
+  } catch (error) {
+    alert(error.message);
+  }
+};
 
   return (
 
