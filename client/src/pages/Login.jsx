@@ -1,56 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/auth.css";
-
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    // Call Firebase login here
-  };
-
-  return (
-    <div className="auth-page">
-      <div className="glass-card">
-
-        <h1>LifeLink AI</h1>
-        <p>Emergency Response System</p>
-
-        <form onSubmit={handleLogin}>
-
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}
-          />
-
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e)=>setPassword(e.target.value)}
-          />
-
-          <button type="submit">
-            Login
-          </button>
-
-        </form>
-
-        <p>
-          Don't have an account?
-          <Link to="/register">
-            Create Account
-          </Link>
-        </p>
-
-      </div>
-    </div>
-  );
+  return <h1>Login Page</h1>;
 }
 
 export default Login;
